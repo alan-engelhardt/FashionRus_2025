@@ -1,3 +1,4 @@
+const category = "Apparel";
 const listContainer = document.querySelector("main");
 fetch(`https://kea-alt-del.dk/t7/api/products`)
   .then((response) => response.json())
@@ -5,7 +6,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products`)
 
 function showProductLst(data) {
   console.log(data);
-  let markup = "<h2>Apparel</h2>";
+  let markup = `<h2>${category}</h2>`;
   data
     .map(
       (product) =>
