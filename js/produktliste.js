@@ -7,10 +7,11 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
 function showList(products) {
   console.log(products);
   let markup = "";
-  markup = products.map((product) => {
-    `<article class="smallProduct">
-    <img src="https://kea-alt-del.dk/t7/images/webp/640/1163.webp" alt="product image" />
-    <h3>Sahara Team India Fanwear Round Neck Jersey</h3>
+  products
+    .map((product) => {
+      markup += `<article class="smallProduct">
+    <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
+    <h3>${product.productdisplayname}</h3>
     <p class="subtle">Tshirts | Nike</p>
     <p class="price">DKK <span>1595</span>,-</p>
     <div class="discounted">
@@ -19,5 +20,8 @@ function showList(products) {
     </div>
     <a href="product.html">Read More</a>
   </article>`;
-  });
+    })
+    .join("");
+  console.log(markup);
+  listContainer.innerHTML = markup;
 }
