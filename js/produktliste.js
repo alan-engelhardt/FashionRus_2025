@@ -13,7 +13,7 @@ function showList(products) {
     <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
     <h3>${product.productdisplayname}</h3>
     <p class="subtle">Tshirts | Nike</p>
-    <p class="price">DKK <span>1595</span>,-</p>
+    <p class="price">DKK <span>${product.price}</span>,-</p>
     <div class="discounted">
       <p>Now DKK <span></span>,-</p>
       <p><span></span>%</p>
