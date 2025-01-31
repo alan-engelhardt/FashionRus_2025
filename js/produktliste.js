@@ -6,8 +6,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
     console.log(products);
     const markup = products
       .map(
-        (product) =>
-          `<article class="smallProduct">
+        (product) => `<article class="smallProduct">
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
           <h3>${product.productdisplayname}</h3>
           <p class="subtle">Tshirts | Nike</p>
