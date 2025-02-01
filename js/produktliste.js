@@ -16,7 +16,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
             <p>Now DKK <span></span>,-</p>
             <p><span></span>%</p>
           </div>
-          <a href="product.html">Read More</a>
+          <a href="product.html?id=${product.id}">Read More</a>
         </article>`
       )
       .join("");
