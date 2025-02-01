@@ -1,12 +1,10 @@
-const productId = 1530;
+const productId = 1535;
 const productContainer = document.querySelector("#productContainer");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
-  .then(showProduct);
-
-function showProduct(data) {
-  productContainer.innerHTML = `
+  .then((data) => {
+    productContainer.innerHTML = `
       <figure>
           <img
             src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp"
@@ -25,4 +23,4 @@ function showProduct(data) {
           <button class="buyButton">Køb nu</button>
         </section>
       `;
-}
+  });
