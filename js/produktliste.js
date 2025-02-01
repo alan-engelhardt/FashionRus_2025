@@ -1,4 +1,5 @@
 const category = new URLSearchParams(window.location.search).get("category");
+document.querySelector("h2").textContent = category;
 const listContainer = document.querySelector("main");
 
 fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
