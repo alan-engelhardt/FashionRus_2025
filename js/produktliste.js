@@ -1,6 +1,7 @@
+const category = new URLSearchParams(window.location.search).get("category");
 const listContainer = document.querySelector("main");
 
-fetch(`https://kea-alt-del.dk/t7/api/products/`)
+fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
   .then((response) => response.json())
   .then((products) => {
     const markup = products
