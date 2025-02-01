@@ -3,7 +3,6 @@ const listContainer = document.querySelector("main");
 fetch(`https://kea-alt-del.dk/t7/api/products/`)
   .then((response) => response.json())
   .then((products) => {
-    console.log(products);
     const markup = products
       .map(
         (product) => `<article class="smallProduct">
@@ -19,6 +18,5 @@ fetch(`https://kea-alt-del.dk/t7/api/products/`)
         </article>`
       )
       .join("");
-    console.log(markup);
     listContainer.innerHTML = markup;
   });
