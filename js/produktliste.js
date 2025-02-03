@@ -1,16 +1,13 @@
 const category = "Apparel";
 const listContainer = document.querySelector("main");
-fetch(`https://kea-alt-del.dk/t7/api/products`)
+fetch(`https://kea-alt-del.dk/t7/api/products?limit=100`)
   .then((response) => response.json())
   .then(showProductLst);
 
 function showProductLst(data) {
-  console.log(data);
-  let markup = `<h2>${category}</h2>`;
-  data
+  const markup = data
     .map(
-      (product) =>
-        (markup += `
+      (product) => `
     <article class="smallProduct">
       <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
       <h3>${product.productdisplayname}</h3>
@@ -22,7 +19,7 @@ function showProductLst(data) {
       </div>
       <a href="product.html">Read More</a>
     </article>
-  `)
+  `
     )
     .join("");
   listContainer.innerHTML = markup;
