@@ -18,7 +18,8 @@ function showProducts(data) {
   markup = data
     .map(
       (element) =>
-        `<article class="smallProduct ${element.soldout && "soldOut"}">
+        //`<article class="smallProduct ${element.soldout && "soldOut"}">
+        `<article class="smallProduct ${element.soldout ? "soldOut" : ""}">
       <img src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" alt="product image" />
       <h3>${element.productdisplayname}</h3>
       <p class="subtle">${element.articletype} | ${element.brandname} </p>
