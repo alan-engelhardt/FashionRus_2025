@@ -1,12 +1,15 @@
-const categori = new URLSearchParams(window.location.search).get("category");
-console.log("produtliste loader... med categori:", categori);
-
-const productlist = document.querySelector(".list");
+const category = new URLSearchParams(window.location.search).get("category");
+const productlist = document.querySelector(".productlist main");
 const overskrift = document.querySelector("h2");
 
-overskrift.innerHTML = categori;
+let endpoint = `https://kea-alt-del.dk/t7/api/products`;
 
-fetch(`https://kea-alt-del.dk/t7/api/products?category=${categori}`)
+if (category) {
+  overskrift.innerHTML = category;
+  endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`;
+}
+
+fetch(endpoint)
   .then((response) => response.json())
   .then(showProducts);
 
@@ -15,7 +18,7 @@ function showProducts(data) {
   markup = data
     .map(
       (element) =>
-        `     <article class="smallProduct">
+        `<article class="smallProduct ${element.soldout && "soldOut"}">
       <img src="https://kea-alt-del.dk/t7/images/webp/640/${element.id}.webp" alt="product image" />
       <h3>${element.productdisplayname}</h3>
       <p class="subtle">${element.articletype} | ${element.brandname} </p>
@@ -28,7 +31,5 @@ function showProducts(data) {
     </article>`
     )
     .join("");
-  console.log(markup);
-
   productlist.innerHTML = markup;
 }
