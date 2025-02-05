@@ -73,7 +73,7 @@
 
 html {
   font-size: calc(18px + ((100vw - 600px) / 250));
-  font-family: -apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif;
+  font-family: system-ui;
   margin: 0;
   padding: 0;
   text-decoration-skip-ink: "auto";
