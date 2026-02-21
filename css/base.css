@@ -98,6 +98,10 @@ img {
 /* Typography
     ––––––––––––––––––––––––––––––––– */
 
+a {
+  text-decoration: none;
+}
+
 h1,
 h2,
 h3,
@@ -348,7 +352,10 @@ button {
   appearance: none;
   display: inline-block;
   line-height: initial;
-  transition: background-color 200ms ease-in-out, border 200ms ease-in-out, transform 200ms ease-in-out;
+  transition:
+    background-color 200ms ease-in-out,
+    border 200ms ease-in-out,
+    transform 200ms ease-in-out;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   user-select: none;
