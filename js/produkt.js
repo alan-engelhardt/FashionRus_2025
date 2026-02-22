@@ -3,16 +3,21 @@ const productContainer = document.querySelector("#productContainer");
 
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
-  .then((data) => {
-    productContainer.innerHTML = `
+  .then(renderProduct);
+
+function renderProduct(data) {
+  productContainer.innerHTML = `
+  <div>
+  <a href="productlist.html?category=${data.category}">Tilbage</a>
       <figure>
           <img
-            src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp"
+            src="https://kea-alt-del.dk/t7/images/webp/640/${data.id}.webp"
             alt="Produktbillede"
             class="productImage"
           />
-          <span class="saleLabel">Udsalg!</span>
+          ${data.discount ? `<span class="saleLabel">Udsalg!</span>` : ""}
         </figure>
+        </div>
         <section class="productDetails">
           <h2 class="productName">${data.productdisplayname}</h2>
           <div>
@@ -23,4 +28,4 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
           <button class="buyButton">Køb nu</button>
         </section>
       `;
-  });
+}
