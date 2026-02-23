@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data</title>
+</head>
+–
+
+<body>
+    <h1>Se data i console</h1>
+</body>
+
+<script>
+    const limit = 20;
+    const fashionurl = `https://kea-alt-del.dk/t7/api/products?limit=${limit}`;
+    fetch(fashionurl).then(res => res.json()).then(data => console.table(data))
+</script>
+
+</html>
