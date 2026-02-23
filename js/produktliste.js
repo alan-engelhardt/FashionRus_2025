@@ -7,10 +7,9 @@ fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
   .then(renderProducts);
 
 function renderProducts(products) {
-  console.table(products);
-  const markup = products
-    .map(
-      (product) => `<article class="smallProduct ${product.soldout && "soldOut"} ${product.discount && "onSale"}">
+  let markup = ""
+  products.forEach(
+    (product) => markup += `<article class="smallProduct ${product.soldout && "soldOut"} ${product.discount && "onSale"}">
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
           <h3>${product.productdisplayname}</h3>
           <p class="subtle">Tshirts | Nike</p>
@@ -21,7 +20,6 @@ function renderProducts(products) {
           </div>
           <a href="product.html?id=${product.id}">Read More</a>
         </article>`,
-    )
-    .join("");
+  );
   listContainer.innerHTML = markup;
 }
