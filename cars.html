@@ -22,15 +22,7 @@
     </section>
 
     <script>
-        const ul = document.querySelector("ul");
-
-        const mitArray = ["banan", "æbler", "citron", "appelsin", "lyche"];
-
-        mitArray.forEach(bygListe);
-
-        function bygListe(elm) {
-            ul.innerHTML += "<li>" + elm + "</li>";
-        }
+        const carlist = document.querySelector("#carlist");
 
         const cars = [
             {
@@ -59,13 +51,16 @@
             }
         ]
 
-        const carlist = document.querySelector("#carlist");
 
-        function showCars() {
+        fetch("cars.json").then(res => res.json()).then(showCars)
+
+
+        function showCars(cars) {
+            console.log(cars)
             let markup = "";
             cars.forEach(car => markup += `
             <article class="card">
-                <img src="${car.image}" alt="model">
+                <img src="images/${car.image}" alt="model">
                 <h3>${car.model}</h3>
                 <h2>${car.brand}</h2>
                 <p>${car.motor}</p>
