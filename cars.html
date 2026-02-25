@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+
+<body>
+    <h1>Biler</h1>
+
+    <section id="carlist">
+        <article class="card">
+            <img src="image" alt="model">
+            <h2>brand</h2>
+            <h3>model</h3>
+            <p>motor</p>
+            <p>range</p>
+            <p>color</p>
+        </article>
+    </section>
+
+    <script>
+        const ul = document.querySelector("ul");
+
+        const mitArray = ["banan", "æbler", "citron", "appelsin", "lyche"];
+
+        mitArray.forEach(bygListe);
+
+        function bygListe(elm) {
+            ul.innerHTML += "<li>" + elm + "</li>";
+        }
+
+        const cars = [
+            {
+                brand: "VW",
+                model: "ID4",
+                motor: "EL",
+                range: 450,
+                color: "Rød",
+                image: "VW_ID4.webp"
+            },
+            {
+                brand: "BMW",
+                model: "X5",
+                motor: "Diesel",
+                range: 1200,
+                color: "Sort",
+                image: "BMW_X5.webp"
+            },
+            {
+                brand: "Citroën",
+                model: "C4",
+                motor: "Bensin",
+                range: 850,
+                color: "sølv",
+                image: "C4.webp"
+            }
+        ]
+
+        const carlist = document.querySelector("#carlist");
+
+        function showCars() {
+            let markup = "";
+            cars.forEach(car => markup += `
+            <article class="card">
+                <img src="${car.image}" alt="model">
+                <h3>${car.model}</h3>
+                <h2>${car.brand}</h2>
+                <p>${car.motor}</p>
+                <p>${car.range}</p>
+                <p>${car.color}</p>
+            </article>
+            `)
+            carlist.innerHTML = markup;
+        }
+    </script>
+</body>
+
+</html>

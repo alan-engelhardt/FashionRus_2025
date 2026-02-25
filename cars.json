@@ -1,0 +1,26 @@
+[
+    {
+        "brand": "VW",
+        "model": "ID4",
+        "motor": "EL",
+        "range": 450,
+        "color": "Rød",
+        "image": "VW_ID4.webp"
+    },
+    {
+        "brand": "BMW",
+        "model": "X5",
+        "motor": "Diesel",
+        "range": 1200,
+        "color": "Sort",
+        "image": "BMW_X5.webp"
+    },
+    {
+        "brand": "Citroën",
+        "model": "C4",
+        "motor": "Bensin",
+        "range": 850,
+        "color": "sølv",
+        "image": "C4.webp"
+    }
+]
