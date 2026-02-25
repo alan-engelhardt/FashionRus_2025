@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Cars</title>
 </head>
 
 <body>
@@ -29,47 +29,45 @@
                 brand: "VW",
                 model: "ID4",
                 motor: "EL",
-                range: 450,
-                color: "Rød",
+                udstyr: ["Soltag", "18' alufælge"],
+                colors: ["Rød", "Grøn", "blå"],
                 image: "VW_ID4.webp"
             },
             {
                 brand: "BMW",
                 model: "X5",
                 motor: "Diesel",
-                range: 1200,
-                color: "Sort",
+                udstyr: ["Adaptiv fartpilot", "Turbolader", "Kopholder"],
+                colors: ["Sort", "Søvl"],
                 image: "BMW_X5.webp"
             },
             {
                 brand: "Citroën",
                 model: "C4",
                 motor: "Bensin",
-                range: 850,
-                color: "sølv",
+                udstyr: ["Radio", "CD afspiller"],
+                colors: ["sølv", "Orange", "Lilla"],
                 image: "C4.webp"
             }
         ]
-
-
-        fetch("cars.json").then(res => res.json()).then(showCars)
-
 
         function showCars(cars) {
             console.log(cars)
             let markup = "";
             cars.forEach(car => markup += `
             <article class="card">
-                <img src="images/${car.image}" alt="model">
+                <img src="images/${car.image}" alt="${car.model}">
                 <h3>${car.model}</h3>
                 <h2>${car.brand}</h2>
                 <p>${car.motor}</p>
-                <p>${car.range}</p>
-                <p>${car.color}</p>
+                <p>${car.udstyr}</p>
+                <p>${car.colors.join(", ")}</p>
             </article>
             `)
             carlist.innerHTML = markup;
         }
+
+        showCars(cars);
     </script>
 </body>
 
