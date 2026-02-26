@@ -44,6 +44,7 @@
   --kbd-border-bottom-color: #a6a5a6;
   --abbr-border-bottom-color: #949394;
 }
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color: white;
@@ -61,6 +62,7 @@
     --select-background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 125.304 125.304"><path d="M62.652 103.895L0 21.41h125.304" fill="%23ffffff"/></svg>');
   }
 }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -149,13 +151,13 @@ p {
   margin-bottom: 1.563rem;
 }
 
-p > *:last-child {
+p>*:last-child {
   margin-bottom: 0;
 }
 
 a {
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
   text-decoration-color: var(--text-decoration-color);
   -webkit-text-decoration-color: var(--text-decoration-color);
   border-radius: 5px;
@@ -165,6 +167,7 @@ a {
 
 @media (hover: hover) {
   a:hover {
+    text-decoration: underline;
     text-decoration-color: var(--text-decoration-color-hover);
   }
 }
@@ -353,11 +356,13 @@ button {
   -webkit-user-select: none;
   user-select: none;
 }
+
 button:disabled {
   opacity: 0.2;
 }
 
 @media (hover: hover) {
+
   input[type="submit"]:hover,
   input[type="reset"]:hover,
   input[type="button"]:hover,
@@ -413,11 +418,11 @@ code {
   border-radius: 10px;
 }
 
-p > code {
+p>code {
   white-space: normal;
 }
 
-pre > code {
+pre>code {
   line-height: 1.563em;
   display: block;
   padding: 1rem;
@@ -427,7 +432,7 @@ pre > code {
 }
 
 /* Forces a new-line at the end of a code block for layout purposes. */
-pre > code::after {
+pre>code::after {
   content: " ";
 }
 
@@ -466,6 +471,7 @@ li {
 dd {
   margin-left: 1rem;
 }
+
 /* Keyboard
     ––––––––––––––––––––––––––––––––– */
 kbd {
@@ -496,12 +502,12 @@ abbr {
 
 /* Details
     ––––––––––––––––––––––––––––––––– */
-details > summary:focus {
+details>summary:focus {
   box-shadow: 0 0 0 2px var(--input-focus-border-color);
   outline: none;
   border-radius: 5px;
 }
 
-details > summary:hover {
+details>summary:hover {
   cursor: pointer;
 }

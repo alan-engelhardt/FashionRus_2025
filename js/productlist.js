@@ -13,7 +13,7 @@ function getData() {
 function showProducts(products) {
   let markup = ""
   products.forEach(
-    (product) => markup += `<article class="smallProduct ${product.soldout && "soldOut"} ${product.discount && "onSale"}">
+    (product) => markup += `<a href="product.html?id=${product.id}"><article class="smallProduct ${product.soldout && "soldOut"} ${product.discount && "onSale"}">
           <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="product image" />
           <h3>${product.productdisplayname}</h3>
           <p class="subtle">Tshirts | Nike</p>
@@ -22,8 +22,7 @@ function showProducts(products) {
             <p>Now DKK <span>${Math.round(product.price - (product.price * product.discount) / 100)}</span>,-</p>
             <p><span>${product.discount}</span>%</p>
           </div>
-          <a href="product.html?id=${product.id}">Read More</a>
-        </article>`,
+        </article></a>`,
   );
   listContainer.innerHTML = markup;
 }

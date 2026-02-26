@@ -127,6 +127,11 @@ html {
   margin-bottom: 1rem;
 }
 
+.productlist main a:hover {
+  text-decoration: none;
+  scale: 1.02;
+}
+
 .discounted p:last-child {
   background: var(--off-color);
   padding: 0.2rem;
