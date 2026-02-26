@@ -1,7 +1,8 @@
 const container = document.querySelector(".categorylist");
+const endpoint = `https://kea-alt-del.dk/t7/api/categories`;
 
 function getData() {
-  fetch(`https://kea-alt-del.dk/t7/api/categories`)
+  fetch(endpoint)
     .then((response) => response.json())
     .then(showData);
 }
