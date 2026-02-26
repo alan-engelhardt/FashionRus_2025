@@ -1,12 +1,16 @@
-const category = new URLSearchParams(window.location.search).get("category");
-document.querySelector("h2").textContent = category;
-const listContainer = document.querySelector("main");
+const category = new URLSearchParams(window.location.search).get("category"); //find category i url'en 
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`; //sæt category på endpoint
+document.querySelector("h2").textContent = category; //skriv category i sidens overskrift
 
-fetch(`https://kea-alt-del.dk/t7/api/products?category=${category}`)
-  .then((response) => response.json())
-  .then(renderProducts);
+const listContainer = document.querySelector("#productlistContainer"); //vælg html-container til listen
 
-function renderProducts(products) {
+function getData() {
+  fetch(endpoint)
+    .then((response) => response.json())
+    .then(showProducts);
+}
+
+function showProducts(products) {
   let markup = ""
   products.forEach(
     (product) => markup += `<article class="smallProduct ${product.soldout && "soldOut"} ${product.discount && "onSale"}">
@@ -23,3 +27,5 @@ function renderProducts(products) {
   );
   listContainer.innerHTML = markup;
 }
+
+getData();
