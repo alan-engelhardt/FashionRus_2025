@@ -1,0 +1,303 @@
+// Kopier hele denne boks ind i CodePen.
+// Udfyld urlParametre i den opgave du arbejder med.
+// Kald derefter funktionen under den opgave (en ad gangen).
+
+function opgave1() {
+  /*Opgave 1 Hent produktlisten med standardindstillingerne (første 10 produkter).*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 1 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave1();
+
+function opgave2() {
+  /*Opgave 2 Hent 12 produkter.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 2 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave2();
+
+function opgave3() {
+  /*Opgave 3 Hent produkter fra startposition 10.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 3 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave3();
+
+function opgave4() {
+  /*Opgave 4 Hent 8 produkter fra startposition 20.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 4 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave4();
+
+function opgave5() {
+  /*Opgave 5 Hent kun produkter i kategorien Footwear.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 5 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave5();
+
+function opgave6() {
+  /*Opgave 6 Hent kun produkter i subcategory Gloves.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 6 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave6();
+
+function opgave7() {
+  /*Opgave 7 Hent kun produkter med articletype Backpacks.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 7 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave7();
+
+function opgave8() {
+  /*Opgave 8 Hent kun produkter fra saesonen Summer.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 8 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave8();
+
+function opgave9() {
+  /*Opgave 9 Hent kun produkter fra brand Puma.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 9 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave9();
+
+function opgave10() {
+  /*Opgave 10 Hent produkter i kategorien Footwear og saesonen Summer.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 10 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave10();
+
+function opgave11() {
+  /*Opgave 11 Hent 6 produkter i kategorien Footwear fra brand Puma.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 11 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave11();
+
+function opgave12() {
+  /*Opgave 12 Hent 15 produkter i kategorien Apparel, startposition 30.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 12 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave12();
+
+function opgave13() {
+  /*Opgave 13 Hent alle kategorier.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 13 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave13();
+
+function opgave14() {
+  /*Opgave 14 Hent alle subcategories.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 14 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave14();
+
+function opgave15() {
+  /*Opgave 15 Hent subcategories for kategorien Apparel.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 15 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave15();
+
+function opgave16() {
+  /*Opgave 16 Hent articletypes for subcategory Shoes.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 16 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave16();
+
+function opgave17() {
+  /*Opgave 17 Hent alle seasons.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 17 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave17();
+
+function opgave18() {
+  /*Opgave 18 Hent alle brands.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 18 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave18();
+
+function opgave19() {
+  /*Opgave 19 Hent produktet med id 665.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 19 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave19();
+
+function opgave20() {
+  /*Opgave 20 Hent produkter med subcategory=Shoes, season=Summer, limit=4 og start=8.*/
+  const urlGrund = "https://kea-alt-del.dk/t7/api/";
+  const urlParametre = "..."; // skriv eventuelle query-parametre her
+  const urlFuld = urlGrund + urlParametre;
+  fetch(urlFuld)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log("Opgave 20 data er: ", data);
+    });
+}
+
+// Kald kun en opgave ad gangen:
+// opgave20();
