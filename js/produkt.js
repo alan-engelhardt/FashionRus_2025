@@ -1,9 +1,12 @@
 const productId = new URLSearchParams(window.location.search).get("id");
 const productContainer = document.querySelector("#productContainer");
+const endpoint = `https://kea-alt-del.dk/t7/api/products/${productId}`
 
-fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
-  .then((response) => response.json())
-  .then(renderProduct);
+function getData() {
+  fetch(endpoint)
+    .then((response) => response.json())
+    .then(renderProduct);
+}
 
 function renderProduct(data) {
   productContainer.innerHTML = `
@@ -29,3 +32,5 @@ function renderProduct(data) {
   </section>
   `;
 }
+
+getData();
