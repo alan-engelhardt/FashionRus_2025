@@ -1,6 +1,7 @@
 const productId = new URLSearchParams(window.location.search).get("id");
-const productContainer = document.querySelector("#productContainer");
 const endpoint = `https://kea-alt-del.dk/t7/api/products/${productId}`
+
+const productContainer = document.querySelector("#productContainer");
 
 function getData() {
   fetch(endpoint)
