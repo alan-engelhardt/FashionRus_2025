@@ -1,30 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>test</title>
+    <style>
+        :root {
+            color-scheme: light dark;
+        }
+
+        body {
+            color: light-dark(#111, #eee);
+            background-color: light-dark(#eee, #111);
+            font-family: system-ui, sans-serif;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Liste</h1>
-    <ul>
-        <li>Peter</li>
-        <li>Treols</li>
-    </ul>
+    <h1>Sortering</h1>
 
     <script>
-        const personer = ["Peter", "Troels", "Keld", "Alan"]
+        const personer = ["Øster", "Peter", "Arne", "Ærna", "Troels", "Åse", "Anders", "Ørle", "Æsel", "Keld", "Alan"];
+        const tal = [1, 5, 8, 11, 22, 3, 4, 101, 9, 2, 7, 256, 6, 0, 500, 10];
 
         console.log(personer);
+        console.log(tal);
 
-        const li_elementer = personer.map(element => `<li>Navn: ${element}</li>`).join("");
-
-        console.log(li_elementer);
-
-        document.querySelector("ul").innerHTML = li_elementer;
     </script>
 </body>
 

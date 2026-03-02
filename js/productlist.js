@@ -1,13 +1,33 @@
 const category = new URLSearchParams(window.location.search).get("category"); //find category i url'en 
-const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}`; //sæt category på endpoint
+const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=30`; //sæt category på endpoint
 document.querySelector("h2").textContent = category; //skriv category i sidens overskrift
 
 const listContainer = document.querySelector("#productlistContainer"); //vælg html-container til listen
 
+// vælg alle knapper og sæt en click eventListener på hver
+document.querySelectorAll("button").forEach(knap => knap.addEventListener("click", filter));
+
+let allData; // erklær en variabel til alle produkter
+
 function getData() {
   fetch(endpoint)
     .then((response) => response.json())
-    .then(showProducts);
+    .then(data => {
+      allData = data; // gem alle produkter
+      showProducts(allData); // vis alle produkter
+    });
+}
+
+function filter(e) {
+  const valgt = e.target.textContent;
+  if (valgt == "All") {
+    console.log(allData);
+    showProducts(allData) // vis alle produkter
+  } else {
+    const udsnit = allData.filter(element => element.gender == valgt); // filtrer produkter
+    console.log(udsnit);
+    showProducts(udsnit); // vis filtrerede produkter
+  }
 }
 
 function showProducts(products) {
