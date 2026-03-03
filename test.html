@@ -11,16 +11,19 @@
 
     <h1>Liste</h1>
     <ul>
-        <li>Peter</li>
-        <li>Treols</li>
+        <li>navn</li>
     </ul>
 
     <script>
-        const personer = ["Peter", "Troels", "Keld", "Alan"]
+        const personer = ["Peter", "Troels", "Keld", "Alan", "Jonas"]
+        const numre = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-        console.log(personer);
+        //const udsnit = numre.filter(tal => tal % 2 == 0);
+        const udsnit = personer.filter(person => person.includes("s"));
 
-        const li_elementer = personer.map(element => `<li>Navn: ${element}</li>`).join("");
+        console.log(udsnit);
+
+        const li_elementer = udsnit.map(element => `<li>Navn: ${element}</li>`).join("");
 
         console.log(li_elementer);
 
