@@ -5,7 +5,9 @@ document.querySelector("h2").textContent = category; //skriv category i sidens o
 const listContainer = document.querySelector("#productlistContainer"); //vælg html-container til listen
 
 // vælg alle knapper og sæt en click eventListener på hver
-document.querySelectorAll("button").forEach(knap => knap.addEventListener("click", filter));
+document.querySelectorAll("#filter button").forEach(knap => knap.addEventListener("click", filter));
+
+document.querySelectorAll("#sorter button").forEach(knap => knap.addEventListener("click", sorter));
 
 let allData; // erklær en variabel til alle produkter
 
@@ -28,6 +30,16 @@ function filter(e) {
     console.log(udsnit);
     showProducts(udsnit); // vis filtrerede produkter
   }
+}
+
+function sorter(event) {
+  const dir = event.target.dataset.price;
+  if (dir == "acc") {
+    allData.sort((a, b) => a.price - b.price);
+  } else {
+    allData.sort((a, b) => b.price - a.price);
+  }
+  showProducts(allData);
 }
 
 function showProducts(products) {

@@ -26,8 +26,12 @@
         const personer = ["Øster", "Peter", "Arne", "Ærna", "Troels", "Åse", "Anders", "Ørle", "Æsel", "Keld", "Alan"];
         const tal = [1, 5, 8, 11, 22, 3, 4, 101, 9, 2, 7, 256, 6, 0, 500, 10];
 
-        console.log(personer);
+        tal.sort((a, b) => a - b);
+
+        personer.sort((a, b) => a.localeCompare(b, "da"));
+
         console.log(tal);
+        console.log(sorterede);
 
     </script>
 </body>
