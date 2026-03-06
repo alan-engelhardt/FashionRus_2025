@@ -1,5 +1,4 @@
 const category = new URLSearchParams(window.location.search).get("category"); //find category i url'en 
-const endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=30`; //sæt category på endpoint
 document.querySelector("h2").textContent = category; //skriv category i sidens overskrift
 
 const listContainer = document.querySelector("#productlistContainer"); //vælg html-container til listen
@@ -9,13 +8,26 @@ document.querySelectorAll("#filter button").forEach(knap => knap.addEventListene
 
 document.querySelectorAll("#sorter button").forEach(knap => knap.addEventListener("click", sorter));
 
-let allData; // erklær en variabel til alle produkter
+document.querySelector("#visflere").addEventListener("click", visflere);
+
+let limit = 8;
+let start = 0;
+let endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&limit=${limit}`; //sæt category på endpoint
+
+function visflere(e) {
+  start += limit;
+  console.log(start)
+  endpoint = `https://kea-alt-del.dk/t7/api/products?category=${category}&start=${start}&limit=${limit}`; //opdater atart på endpoint
+  getData();
+}
+
+let allData = []; // erklær en variabel til alle produkter
 
 function getData() {
   fetch(endpoint)
     .then((response) => response.json())
     .then(data => {
-      allData = data; // gem alle produkter
+      allData.push(...data); // tilføj nye produkter til allData
       showProducts(allData); // vis alle produkter
     });
 }
