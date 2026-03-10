@@ -20,19 +20,12 @@
 
 <body>
 
-    <h1>Sortering</h1>
+    <h1>Test</h1>
 
     <script>
-        const personer = ["Øster", "Peter", "Arne", "Ærna", "Troels", "Åse", "Anders", "Ørle", "Æsel", "Keld", "Alan"];
-        const tal = [1, 5, 8, 11, 22, 3, 4, 101, 9, 2, 7, 256, 6, 0, 500, 10];
-
-        tal.sort((a, b) => a - b);
-
-        personer.sort((a, b) => a.localeCompare(b, "da"));
-
-        console.log(tal);
-        console.log(sorterede);
-
+        fetch('https://dummyjson.com/recipes')
+            .then(res => res.json())
+            .then(data => console.log(data));
     </script>
 </body>
 
