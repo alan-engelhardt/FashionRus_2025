@@ -34,7 +34,7 @@
     <main></main>
 
     <script>
-        fetch('https://dummyjson.com/users')
+        fetch('https://dummyjson.com/users?limit=4')
             .then(res => res.json())
             .then(show);
 
