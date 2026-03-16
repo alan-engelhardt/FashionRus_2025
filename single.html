@@ -16,6 +16,11 @@
             font-family: system-ui, sans-serif;
             padding: 1rem;
         }
+
+        #main {
+            display: block;
+            width: 800px;
+        }
     </style>
 </head>
 
@@ -35,9 +40,10 @@
         document.querySelector("h1").textContent = user.firstName;
         let markup = `               
                 <article>
-                <img src="images/${user.id}/a.webp" alt="profile image">
-                <img src="images/${user.id}/b.webp" alt="profile image">
-                <img src="images/${user.id}/c.webp" alt="profile image">
+                <img src="images/${user.id}/a.webp" alt="profile image" id="main">
+                <div>
+                <img src="images/${user.id}/b.webp" alt="profile image"><img src="images/${user.id}/c.webp" alt="profile image">
+                </div>
                 </article>`
         document.querySelector("main").innerHTML = markup;
     }
