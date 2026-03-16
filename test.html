@@ -21,8 +21,24 @@
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 1rem;
 
+            article {
+                background-color: #333;
+                padding: .5rem;
+            }
+
             img {
                 max-width: 100%;
+            }
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            h2 {
+                padding: 0;
+                margin: 0;
+                text-align: right;
             }
         }
     </style>
@@ -43,11 +59,11 @@
             let markup = "";
             data.users.forEach(user => {
                 markup += `
+                <a href=single.html?id=${user.id}>
                 <article>
-                <h2>${user.firstName}</h2>
-                <img src="images/${user.id}/a.webp" alt="profile image">
-                <img src="images/${user.id}/b.webp" alt="profile image">
-                </article>`
+                    <img src="images/${user.id}/a.webp" alt="profile image">
+                    <h2>${user.firstName}</h2>
+                </article></a>`
             })
             document.querySelector("main").innerHTML = markup;
         }
