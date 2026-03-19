@@ -26,7 +26,6 @@
 
 <body>
     <a href="test.html">Back</a>
-    <h1>Test</h1>
     <main></main>
 </body>
 <script>
@@ -37,14 +36,15 @@
 
     function show(user) {
         console.log(user);
-        document.querySelector("h1").textContent = user.firstName;
         let markup = `               
-                <article>
+            <article>
+                <h2>${user.firstName} ${user.lastName}</h2>
                 <img src="images/${user.id}/a.webp" alt="profile image" id="main">
                 <div>
-                <img src="images/${user.id}/b.webp" alt="profile image"><img src="images/${user.id}/c.webp" alt="profile image">
+                    <img src="images/${user.id}/b.webp" alt="profile image">
+                    <img src="images/${user.id}/c.webp" alt="profile image">
                 </div>
-                </article>`
+            </article>`
         document.querySelector("main").innerHTML = markup;
     }
 </script>
